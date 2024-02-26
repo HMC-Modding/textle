@@ -15,7 +15,7 @@ function scramble(x) {
   //clearInterval(interval);
 
   interval = setInterval(() => {
-    x.innerText = x.innerText
+    x.innerText = x.dataset.value
       .split("")
       .map((letter, index) => {
         if (index < iteration) {
@@ -27,6 +27,7 @@ function scramble(x) {
       .join("");
 
     if (iteration >= x.dataset.value.length) {
+      x.innerText = x.dataset.value
       clearInterval(interval);
     }
 
