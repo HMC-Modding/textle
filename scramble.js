@@ -12,7 +12,7 @@ for (index = 0; index < list.length; ++index) {
 function scramble(x) {
   let iteration = 0;
 
-  clearInterval(interval);
+  //clearInterval(interval);
 
   interval = setInterval(() => {
     x.innerText = x.innerText
