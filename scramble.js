@@ -1,7 +1,5 @@
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-let interval = null;
-
 var list, index;
 list = document.getElementsByClassName("scramble");
 for (index = 0; index < list.length; ++index) {
@@ -12,9 +10,9 @@ for (index = 0; index < list.length; ++index) {
 function scramble(x) {
   let iteration = 0;
 
-  //clearInterval(interval);
+  clearInterval(x.interval);
 
-  interval = setInterval(() => {
+  x.interval = setInterval(() => {
     x.innerText = x.dataset.value
       .split("")
       .map((letter, index) => {
@@ -28,7 +26,7 @@ function scramble(x) {
 
     if (iteration >= x.dataset.value.length) {
       x.innerText = x.dataset.value
-      clearInterval(interval);
+      clearInterval(x.interval);
     }
 
     iteration += 1 / 2;
